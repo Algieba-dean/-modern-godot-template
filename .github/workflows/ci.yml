@@ -32,17 +32,14 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Install dev tools
-        run: uv sync --dev
-
       - name: Run pre-commit
         run: SKIP=no-commit-to-branch uv run pre-commit run --all-files --show-diff-on-failure
 
       - name: Check GDScript formatting
-        run: uv run gdformat --check scripts/main.gd tests/test_smoke.gd
+        run: uv run gdformat --check scripts tests
 
       - name: Run GDScript linter
-        run: uv run gdlint scripts/main.gd tests/test_smoke.gd
+        run: uv run gdlint scripts tests
 
   validate:
     name: Validate Godot Project

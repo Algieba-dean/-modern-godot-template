@@ -8,7 +8,7 @@
 - [ ] Ran `scripts/validate_project.ps1`
 - [ ] Ran `uv run gdformat --check scripts tests`
 - [ ] Ran `uv run gdlint scripts tests`
-- [ ] Or ran `scripts/quality.ps1`
+- [ ] Or ran `scripts/quality.ps1` / `scripts/quality.sh`
 - [ ] Checked affected scenes in the Godot editor
 
 ## Notes

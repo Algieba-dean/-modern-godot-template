@@ -21,14 +21,18 @@ The script updates the project display name, repository slug, author metadata, R
 ### Prerequisites
 
 - Godot 4.7+
-- PowerShell on Windows
+- PowerShell on Windows, or Bash on Linux/macOS
 - [uv](https://github.com/astral-sh/uv) for development tooling
 - GdUnit4 is vendored in `addons/gdUnit4`
 
-Set `GODOT_BIN` if the `godot` command is not already on your `PATH`:
+Set `GODOT_BIN` if the `godot` command is not already on your `PATH`.
 
 ```powershell
 $env:GODOT_BIN = 'C:\path\to\godot.exe'
+```
+
+```bash
+export GODOT_BIN=/path/to/godot
 ```
 
 Install development tools with:
@@ -39,16 +43,16 @@ uv sync --dev
 
 ### Common Commands
 
-| Task | Command |
-| :--- | :--- |
-| Run full local quality gate | `.\scripts\quality.ps1` |
-| Validate project load | `.\scripts\validate_project.ps1` |
-| Run tests | `.\scripts\run_tests.ps1` |
-| Check GDScript format | `uv run gdformat --check scripts tests` |
-| Lint GDScript | `uv run gdlint scripts tests` |
-| Run all pre-commit hooks | `uv run pre-commit run --all-files` |
-| Run a test path | `.\scripts\run_tests.ps1 -TestPath res://tests/` |
-| Open editor | `& "$env:GODOT_BIN" --path .` |
+| Task | Windows | Linux/macOS |
+| :--- | :--- | :--- |
+| Run full quality gate | `.\scripts\quality.ps1` | `./scripts/quality.sh` |
+| Validate project load | `.\scripts\validate_project.ps1` | `./scripts/validate_project.sh` |
+| Run tests | `.\scripts\run_tests.ps1` | `./scripts/run_tests.sh` |
+| Run a test path | `.\scripts\run_tests.ps1 -TestPath res://tests/` | `./scripts/run_tests.sh res://tests/` |
+| Check GDScript format | `uv run gdformat --check scripts tests` | `uv run gdformat --check scripts tests` |
+| Lint GDScript | `uv run gdlint scripts tests` | `uv run gdlint scripts tests` |
+| Run all pre-commit hooks | `uv run pre-commit run --all-files` | `uv run pre-commit run --all-files` |
+| Open editor | `& "$env:GODOT_BIN" --path .` | `"$GODOT_BIN" --path .` |
 
 ### Project Structure
 
@@ -88,6 +92,10 @@ Run every local check:
 
 ```powershell
 .\scripts\quality.ps1
+```
+
+```bash
+./scripts/quality.sh
 ```
 
 ## Template Notes

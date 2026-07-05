@@ -12,6 +12,12 @@
 .\scripts\quality.ps1
 ```
 
+On Linux/macOS:
+
+```bash
+./scripts/quality.sh
+```
+
 ## Branches
 
 - `main` or `master` is treated as the protected production branch.
@@ -32,6 +38,6 @@ Before opening a PR:
 - Run `scripts/run_tests.ps1`.
 - Run `uv run gdformat --check scripts tests`.
 - Run `uv run gdlint scripts tests`.
-- Or run all checks with `scripts/quality.ps1`.
+- Or run all checks with `scripts/quality.ps1` on Windows or `scripts/quality.sh` on Linux/macOS.
 - Check any changed scenes in the Godot editor.
 - Fill out the PR template and mention any skipped validation.

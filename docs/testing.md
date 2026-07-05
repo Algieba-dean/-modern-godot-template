@@ -10,10 +10,18 @@ Set `GODOT_BIN` first if the `godot` command is not on your `PATH`.
 .\scripts\run_tests.ps1
 ```
 
+```bash
+./scripts/run_tests.sh
+```
+
 To run a specific folder:
 
 ```powershell
 .\scripts\run_tests.ps1 -TestPath res://tests/
+```
+
+```bash
+./scripts/run_tests.sh res://tests/
 ```
 
 ## CI
