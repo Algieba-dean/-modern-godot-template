@@ -22,6 +22,7 @@ The script updates the project display name, repository slug, author metadata, R
 
 - Godot 4.7+
 - PowerShell on Windows
+- [uv](https://github.com/astral-sh/uv) for development tooling
 - GdUnit4 is vendored in `addons/gdUnit4`
 
 Set `GODOT_BIN` if the `godot` command is not already on your `PATH`:
@@ -30,10 +31,17 @@ Set `GODOT_BIN` if the `godot` command is not already on your `PATH`:
 $env:GODOT_BIN = 'C:\path\to\godot.exe'
 ```
 
+Install development tools with:
+
+```powershell
+uv sync --dev
+```
+
 ### Common Commands
 
 | Task | Command |
 | :--- | :--- |
+| Run full local quality gate | `.\scripts\quality.ps1` |
 | Validate project load | `.\scripts\validate_project.ps1` |
 | Run tests | `.\scripts\run_tests.ps1` |
 | Check GDScript format | `uv run gdformat --check scripts tests` |
@@ -41,12 +49,6 @@ $env:GODOT_BIN = 'C:\path\to\godot.exe'
 | Run all pre-commit hooks | `uv run pre-commit run --all-files` |
 | Run a test path | `.\scripts\run_tests.ps1 -TestPath res://tests/` |
 | Open editor | `& "$env:GODOT_BIN" --path .` |
-
-Install development tools with:
-
-```powershell
-uv sync --dev
-```
 
 ### Project Structure
 
@@ -80,6 +82,12 @@ Run locally:
 
 ```powershell
 .\scripts\run_tests.ps1
+```
+
+Run every local check:
+
+```powershell
+.\scripts\quality.ps1
 ```
 
 ## Template Notes

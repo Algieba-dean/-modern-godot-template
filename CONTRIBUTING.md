@@ -3,16 +3,13 @@
 ## Setup
 
 1. Install Godot 4.7 or newer.
-2. Open the project once in the editor so Godot imports assets.
-3. Run the local checks:
+2. Install `uv`.
+3. Set `GODOT_BIN` if `godot` is not on your `PATH`.
+4. Open the project once in the editor so Godot imports assets.
+5. Run the local checks:
 
 ```powershell
-uv sync --dev
-uv run gdformat --check scripts tests
-uv run gdlint scripts tests
-uv run pre-commit run --all-files
-.\scripts\validate_project.ps1
-.\scripts\run_tests.ps1
+.\scripts\quality.ps1
 ```
 
 ## Branches
@@ -35,5 +32,6 @@ Before opening a PR:
 - Run `scripts/run_tests.ps1`.
 - Run `uv run gdformat --check scripts tests`.
 - Run `uv run gdlint scripts tests`.
+- Or run all checks with `scripts/quality.ps1`.
 - Check any changed scenes in the Godot editor.
 - Fill out the PR template and mention any skipped validation.
