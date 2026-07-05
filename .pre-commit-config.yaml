@@ -1,4 +1,4 @@
-exclude: '^(\.git|\.godot|reference|addons/gdUnit4|builds|reports|.*\.import)'
+exclude: '^(\.git|\.godot|\.venv|reference|addons/gdUnit4|addons/godot_mcp|builds|reports|.*\.import)'
 
 default_stages: [pre-commit]
 fail_fast: false
@@ -19,3 +19,19 @@ repos:
       - id: detect-private-key
       - id: no-commit-to-branch
         args: ["--branch", "main", "--branch", "master"]
+
+  - repo: local
+    hooks:
+      - id: gdformat
+        name: gdformat
+        entry: uv run gdformat --check
+        language: system
+        types_or: [gdscript]
+        exclude: '^(addons/gdUnit4|addons/godot_mcp)/'
+
+      - id: gdlint
+        name: gdlint
+        entry: uv run gdlint
+        language: system
+        types_or: [gdscript]
+        exclude: '^(addons/gdUnit4|addons/godot_mcp)/'

@@ -7,6 +7,10 @@
 3. Run the local checks:
 
 ```powershell
+uv sync --dev
+uv run gdformat --check scripts tests
+uv run gdlint scripts tests
+uv run pre-commit run --all-files
 .\scripts\validate_project.ps1
 .\scripts\run_tests.ps1
 ```
@@ -29,5 +33,7 @@ Before opening a PR:
 
 - Run `scripts/validate_project.ps1`.
 - Run `scripts/run_tests.ps1`.
+- Run `uv run gdformat --check scripts tests`.
+- Run `uv run gdlint scripts tests`.
 - Check any changed scenes in the Godot editor.
 - Fill out the PR template and mention any skipped validation.

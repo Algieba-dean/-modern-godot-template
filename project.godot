@@ -17,7 +17,7 @@ run/main_scene="res://scenes/main.tscn"
 
 [autoload]
 
-McpInteractionServer="*res://scripts/mcp_interaction_server.gd"
+McpInteractionServer="*res://addons/godot_mcp/mcp_interaction_server.gd"
 
 [editor_plugins]
 

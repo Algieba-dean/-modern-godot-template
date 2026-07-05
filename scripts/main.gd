@@ -1,6 +1,5 @@
 extends Node
 
-
 const TEMPLATE_NAME := "GodotGameTemplate"
 
 

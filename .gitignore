@@ -8,6 +8,9 @@ reference/
 # Local Codex machine-specific settings
 .codex/config.toml
 
+# Python dev tooling environment
+.venv/
+
 # Godot build outputs and generated reports
 builds/
 reports/

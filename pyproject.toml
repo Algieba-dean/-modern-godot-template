@@ -1,0 +1,12 @@
+[project]
+name = "godot-game-template-devtools"
+version = "0.1.0"
+description = "Development tooling for the Godot game template."
+requires-python = ">=3.12"
+dependencies = []
+
+[dependency-groups]
+dev = [
+    "gdtoolkit>=4.3.4",
+    "pre-commit>=4.0.0",
+]

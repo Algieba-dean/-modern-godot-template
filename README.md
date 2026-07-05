@@ -24,10 +24,10 @@ The script updates the project display name, repository slug, author metadata, R
 - PowerShell on Windows
 - GdUnit4 is vendored in `addons/gdUnit4`
 
-Set `GODOT_BIN` if your Godot executable is not in the default local path:
+Set `GODOT_BIN` if the `godot` command is not already on your `PATH`:
 
 ```powershell
-$env:GODOT_BIN = 'E:\steam\steamapps\common\Godot Engine\godot.windows.opt.tools.64.exe'
+$env:GODOT_BIN = 'C:\path\to\godot.exe'
 ```
 
 ### Common Commands
@@ -36,8 +36,17 @@ $env:GODOT_BIN = 'E:\steam\steamapps\common\Godot Engine\godot.windows.opt.tools
 | :--- | :--- |
 | Validate project load | `.\scripts\validate_project.ps1` |
 | Run tests | `.\scripts\run_tests.ps1` |
+| Check GDScript format | `uv run gdformat --check scripts tests` |
+| Lint GDScript | `uv run gdlint scripts tests` |
+| Run all pre-commit hooks | `uv run pre-commit run --all-files` |
 | Run a test path | `.\scripts\run_tests.ps1 -TestPath res://tests/` |
 | Open editor | `& "$env:GODOT_BIN" --path .` |
+
+Install development tools with:
+
+```powershell
+uv sync --dev
+```
 
 ### Project Structure
 
