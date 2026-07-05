@@ -1,0 +1,20 @@
+# Godot 4+ specific ignores
+.godot/
+/android/
+
+# Local reference material
+reference/
+
+# Local Codex machine-specific settings
+.codex/config.toml
+
+# Godot build outputs and generated reports
+builds/
+reports/
+coverage/
+*.tmp
+*.log
+
+# OS/editor noise
+.DS_Store
+Thumbs.db

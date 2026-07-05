@@ -1,0 +1,7 @@
+cff-version: 1.2.0
+title: GodotGameTemplate
+message: If you use this project, please cite it using this metadata.
+type: software
+authors:
+  - family-names: Algieba-dean
+license: MIT
